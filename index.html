@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<style>
+div{
+width:20px;
+height:20px;
+border:1px solid #ccc;
+position:absolute;
+background:#f00;
+border-radius:10px;
+}
+img{width:100%;}
+</style>
+<body>
+
+<image src="http://www.churchplanting.com/wp-content/uploads/2012/02/dummy.jpg" onClick="showCoords(event,this)" >
+
+<p><strong>Tip:</strong> Try to click different places in the heading.</p>
+
+
+<div id="div"></div>
+
+<script>
+
+function showCoords(event,th) {
+    var x = event.clientX;
+    var y = event.clientY;
+
+//width
+width=th.width;
+onParcentX=width/100;
+clickParcentX=x/onParcentX;
+//hight
+height=th.height;
+onParcentY=height/100;
+clickParcentY=y/onParcentY;
+
+document.getElementById("div").style.top=clickParcentY+"%";  
+document.getElementById("div").style.left=clickParcentX+"%";
+}
+</script>
+
+</body>
+</html>
